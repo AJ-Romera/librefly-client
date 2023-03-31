@@ -4,14 +4,17 @@ import "./index.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import CreateBook from "./pages/CreateBook";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* navbar */}
+      <Navbar />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/new-book" element={<CreateBook />} />
         </Routes>
       </div>
     </BrowserRouter>
