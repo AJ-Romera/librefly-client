@@ -4,6 +4,6 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <h1>LibreFly</h1>
+    <h1 className="text-3xl font-bold underline">LibreFly</h1>
   </React.StrictMode>
 );
