@@ -1,15 +1,22 @@
 import React from "react";
+import { Book } from "../ts-interfaces/Book.interfaces";
 
-const BookItem = () => {
+interface Props {
+  book: Book;
+}
+
+const BookItem = ({ book }: Props) => {
   return (
-    <div className="p-4 card">
+    <div className="p-4">
       <div>
         <div>
-          <h2>{/* {book.title} */}big something</h2>
+          <h2>{book.name}</h2>
           <span>X</span>
         </div>
-        {/* <p>{book.description}</p> */}
-        <p>something</p>
+        <p>ISBN: {book.isbn}</p>
+        <p>
+          {book.author?.last_name}, {book.author?.first_name}
+        </p>
       </div>
     </div>
   );

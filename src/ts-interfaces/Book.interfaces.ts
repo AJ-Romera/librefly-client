@@ -1,7 +1,9 @@
+import { Author } from "./Author.interface";
+
 export interface Book {
   name: string;
   isbn: string;
-  author?: object;
+  author?: Author;
   _id?: string;
   createdAt?: string;
   updatedAt?: string;
