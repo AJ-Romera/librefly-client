@@ -14,14 +14,19 @@ const BookItem = ({ book, loadBooks }: Props) => {
   };
 
   return (
-    <div className="p-4">
+    <div className="flex items-center justify-between px-4 py-3 sm:px-6">
       <div>
-        <div>
+        <div className="flex justify-between items-center">
           <h2>{book.name}</h2>
-          <span onClick={() => book._id && handleDelete(book._id)}>X</span>
+          <span
+            className="cursor-pointer bg-red-500 p-2 rounded-full"
+            onClick={() => book._id && handleDelete(book._id)}
+          >
+            X
+          </span>
         </div>
-        <p>ISBN: {book.isbn}</p>
-        <p>
+        <p className="text-gray-500">ISBN: {book.isbn}</p>
+        <p className="text-gray-600">
           {book.author?.last_name}, {book.author?.first_name}
         </p>
       </div>
