@@ -11,7 +11,7 @@ export const getBook = async (id: string) => {
   return await axios.get<Book>(`${API}/books/${id}`);
 };
 
-export const createVideo = async (book: Book) => {
+export const createBook = async (book: Book) => {
   return await axios.post(`${API}/books`, book);
 };
 

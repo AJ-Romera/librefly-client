@@ -1,7 +1,8 @@
 import React from "react";
+import BookForm from "../components/BookForm";
 
 const CreateBook = () => {
-  return <div>CreateBook</div>;
+  return <BookForm />;
 };
 
 export default CreateBook;
