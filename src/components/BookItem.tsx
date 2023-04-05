@@ -35,7 +35,12 @@ const BookItem = ({ book, loadBooks }: Props) => {
             X
           </span>
         </div>
-        <p className="text-gray-500">ISBN: {book.isbn}</p>
+        <p
+          className="text-gray-500 cursor-pointer"
+          onClick={() => navigate(`edit/books/${book._id}`)}
+        >
+          ISBN: {book.isbn}
+        </p>
         <p className="text-gray-600">
           {book.author?.last_name}, {book.author?.first_name}
         </p>
