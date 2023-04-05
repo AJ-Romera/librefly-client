@@ -31,9 +31,6 @@ const BookDetails = () => {
       <h3>
         Author: {book.author_last_name}, {book.author_first_name}
       </h3>
-      <h3>ID: {book._id}</h3>
-      <h3>Create at: {book.createdAt}</h3>
-      <h3>Updated at: {book.updatedAt}</h3>
     </div>
   );
 };
