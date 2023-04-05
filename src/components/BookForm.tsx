@@ -15,6 +15,8 @@ const BookForm = () => {
   const [book, setBook] = useState<Book>({
     name: "",
     isbn: "",
+    author_first_name: "",
+    author_last_name: "",
   });
 
   const handleInputChange = (e: InputChange) => {
@@ -42,8 +44,8 @@ const BookForm = () => {
   const getBook = async (id: string) => {
     try {
       const response = await bookService.getBook(id);
-      const { name, isbn } = response.data;
-      setBook({ name, isbn });
+      const { name, isbn, author_first_name, author_last_name } = response.data;
+      setBook({ name, isbn, author_first_name, author_last_name });
     } catch (error) {
       console.error({ message: "Error: No book found with the given id" });
     }
@@ -82,6 +84,32 @@ const BookForm = () => {
                 name="isbn"
                 value={book.isbn}
                 placeholder="Write the ISBN of the book"
+                autoFocus
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="author_first_name">Author's first name</label>
+              <input
+                id="author_first_name"
+                type="text"
+                name="author_first_name"
+                value={book.author_first_name}
+                placeholder="Write the first name of the author"
+                autoFocus
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="author_last_name">Author's last name</label>
+              <input
+                id="author_last_name"
+                type="text"
+                name="author_last_name"
+                value={book.author_last_name}
+                placeholder="Write the last name of the author"
                 autoFocus
                 onChange={handleInputChange}
               />

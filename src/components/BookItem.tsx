@@ -42,7 +42,7 @@ const BookItem = ({ book, loadBooks }: Props) => {
           ISBN: {book.isbn}
         </p>
         <p className="text-gray-600">
-          {book.author?.last_name}, {book.author?.first_name}
+          {book.author_last_name}, {book.author_first_name}
         </p>
       </div>
     </div>
