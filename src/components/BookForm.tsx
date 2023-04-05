@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 
 type InputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
-
 type FormChange = FormEvent<HTMLFormElement>;
 
 const BookForm = () => {
