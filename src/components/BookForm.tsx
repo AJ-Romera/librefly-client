@@ -1,8 +1,8 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Book } from "../ts-interfaces/Book.interfaces";
-import { createBook } from "../services/BookService";
+import * as bookService from "../services/BookService";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 type InputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
@@ -10,6 +10,7 @@ type FormChange = FormEvent<HTMLFormElement>;
 
 const BookForm = () => {
   const navigate = useNavigate();
+  const params = useParams();
 
   const [book, setBook] = useState<Book>({
     name: "",
@@ -24,8 +25,13 @@ const BookForm = () => {
     e.preventDefault();
 
     try {
-      await createBook(book);
-      toast.success("New book added!");
+      if (!params.id) {
+        await bookService.createBook(book);
+        toast.success("New book added!");
+      } else {
+        await bookService.updateBook(params.id, book);
+        toast.success("Book edited!");
+      }
 
       navigate("/");
     } catch (error) {
@@ -33,11 +39,27 @@ const BookForm = () => {
     }
   };
 
+  const getBook = async (id: string) => {
+    try {
+      const response = await bookService.getBook(id);
+      const { name, isbn } = response.data;
+      setBook({ name, isbn });
+    } catch (error) {
+      console.error({ message: "Error: No book found with the given id" });
+    }
+  };
+
+  useEffect(() => {
+    if (params.id) {
+      getBook(params.id);
+    }
+  }, []);
+
   return (
     <div className="flex justify-center items-center h-screen -mt-20 w-full">
       <div className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700 w-1/2">
         <div className="p-6">
-          <h3>New Book</h3>
+          {params.id ? <h3>Edit Book</h3> : <h3>New Book</h3>}
           <form id="form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="book-title">Book Title</label>
@@ -65,9 +87,15 @@ const BookForm = () => {
               />
             </div>
 
-            <button className="bg-green-700 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-              Create
-            </button>
+            {params.id ? (
+              <button className="bg-green-500 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                Update
+              </button>
+            ) : (
+              <button className="bg-green-700 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                Create
+              </button>
+            )}
           </form>
         </div>
       </div>

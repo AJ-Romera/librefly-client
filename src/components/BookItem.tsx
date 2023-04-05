@@ -24,7 +24,7 @@ const BookItem = ({ book, loadBooks }: Props) => {
         <div className="flex justify-between items-center">
           <h2
             className="cursor-pointer"
-            onClick={() => navigate(`/update/${book._id}`)}
+            onClick={() => navigate(`/books/${book._id}`)}
           >
             {book.name}
           </h2>

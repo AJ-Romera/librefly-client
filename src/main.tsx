@@ -17,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-book" element={<CreateBook />} />
+          <Route path="/books/:id" element={<CreateBook />} />
         </Routes>
         <ToastContainer />
       </div>
