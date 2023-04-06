@@ -3,39 +3,55 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <span className="font-semibold text-2xl tracking-tight">LibreFly</span>
+    <nav className="flex w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4">
+      <div className="flex items-centers">
+        <h1 className="text-2xl px-2">
+          Libre<span className="font-bold">Fly</span>
+        </h1>
       </div>
-      <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-          <svg
-            className="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
+
+      <div className="bg-gray-200 rounded-full flex items-center px-2 w-[500px]">
+        <input
+          className="bg-transparent p-2 w-full focus:outline-none"
+          type="text"
+          placeholder="Search books"
+        />
       </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
+
+      <div className="flex items-center w-auto">
+        <div className="text-sm">
           <Link
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block lg:inline-block lg:mt-0 hover:text-red-500 mr-4"
             to="/"
           >
             Books
           </Link>
         </div>
-        <div>
+        <div className="text-sm">
           <Link
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-            to="/new-book"
+            className="block lg:inline-block lg:mt-0 hover:text-red-500 mr-4"
+            to="/example1"
           >
-            + Create new book
+            example
           </Link>
         </div>
+        <div className="text-sm">
+          <Link
+            className="block lg:inline-block lg:mt-0 hover:text-red-500 mr-4"
+            to="/example2"
+          >
+            example 2
+          </Link>
+        </div>
+      </div>
+
+      <div>
+        <Link
+          className=" text-sm px-4 py-2 border rounded border-black hover:border-transparent hover:text-white hover:bg-black mt-0"
+          to="/new-book"
+        >
+          + Create new book
+        </Link>
       </div>
     </nav>
   );

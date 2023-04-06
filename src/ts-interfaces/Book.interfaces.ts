@@ -1,5 +1,3 @@
-import { Author } from "./Author.interface";
-
 export interface Book {
   name: string;
   isbn: string;

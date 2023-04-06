@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Navbar />
-      <div>
+      <div className="max-w-[1640px] mx-auto px-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-book" element={<CreateBook />} />
