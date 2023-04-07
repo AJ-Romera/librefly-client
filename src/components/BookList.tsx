@@ -17,7 +17,7 @@ const BookList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="grid grid-cols-4 w-full mx-auto gap-3 mt-6">
       {books.map((book) => {
         return <BookItem book={book} key={book._id} loadBooks={loadBooks} />;
       })}
