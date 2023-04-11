@@ -45,7 +45,7 @@ const Navbar = () => {
       </div>
 
       {/* Button to Create a new book */}
-      <div className="hidden">
+      <div className="hidden md:flex">
         <Link
           className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-black"
           to="/new-book"
@@ -56,7 +56,7 @@ const Navbar = () => {
 
       {/* MOBILE */}
 
-      <div className="flex justify-between items-center w-28">
+      <div className="flex md:hidden justify-between items-center w-28">
         {/* Mobile Search */}
         <div>
           <HiSearch />
