@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HiPlus, HiSearch, HiMenu } from "react-icons/hi";
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200">
+    <nav className="flex sticky top-0 backdrop-blur-md shadow-md bg-white/60 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200">
       {/* LibreFly´s Logo */}
       <h1 className="text-2xl px-2 md:text-xl">
         <Link
@@ -46,21 +47,35 @@ const Navbar = () => {
       {/* Button to Create a new book */}
       <div className="hidden">
         <Link
-          className="text-sm px-4 py-2 border rounded border-black hover:border-transparent hover:text-white hover:bg-black mt-0"
+          className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-black"
           to="/new-book"
         >
           + Create new book
         </Link>
       </div>
 
-      {/* Mobile Button to create a new book */}
-      <div>
-        <Link
-          className="text-sm px-4 py-2 border rounded border-black hover:border-transparent hover:text-white hover:bg-black mt-0"
-          to="/new-book"
-        >
-          + Create new book
-        </Link>
+      {/* MOBILE */}
+
+      <div className="flex justify-between items-center w-28">
+        {/* Mobile Search */}
+        <div>
+          <HiSearch />
+        </div>
+
+        {/* Mobile Button to create a new book */}
+        <div>
+          <Link
+            className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-black"
+            to="/new-book"
+          >
+            <HiPlus />
+          </Link>
+        </div>
+
+        {/* Mobile Menu */}
+        <div>
+          <HiMenu />
+        </div>
       </div>
     </nav>
   );

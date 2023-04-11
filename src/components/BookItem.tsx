@@ -37,7 +37,7 @@ const BookItem = ({ book, loadBooks }: Props) => {
 </div> */
 
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-3">
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow p-3">
       <div className="flex justify-between items-center">
         <h2
           className="cursor-pointer text-xl font-bold text-gray-900"
