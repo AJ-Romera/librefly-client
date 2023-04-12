@@ -38,7 +38,23 @@ const BookItem = ({ book, loadBooks }: Props) => {
       </div>
 
       {/* Buttons on Hover */}
-      <div className="absolute h-14 w-full bg-blue-300/20 backdrop-blur-sm flex gap-4 justify-end items-start opacity-0 -top-10 group-hover:top-0 group-hover:opacity-100 transition-all duration-500">
+      <div className="absolute h-14 w-full bg-blue-300/20 backdrop-blur-sm gap-4 justify-end items-start opacity-0 -top-10 group-hover:top-0 group-hover:opacity-100 transition-all duration-500 hidden md:flex">
+        <button
+          className="py-2.5 px-5 mt-3 cursor-pointer bg-blue-100 text-blue-800 text-base font-semibold rounded"
+          onClick={() => navigate(`/edit-book/${book._id}`)}
+        >
+          <HiPencil />
+        </button>
+        <button
+          className="py-2.5 px-5 mr-4 mt-3 cursor-pointer bg-red-100 text-red-800 text-base font-semibold rounded"
+          onClick={() => book._id && handleDelete(book._id)}
+        >
+          <HiTrash />
+        </button>
+      </div>
+
+      {/* Buttons Responsive */}
+      <div className="absolute w-full flex gap-4 justify-end items-start top-0 opacity-100 transition-all duration-500 md:hidden">
         <button
           className="py-2.5 px-5 mt-3 cursor-pointer bg-blue-100 text-blue-800 text-base font-semibold rounded"
           onClick={() => navigate(`/edit-book/${book._id}`)}
