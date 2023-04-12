@@ -4,7 +4,7 @@ import { HiPlus, HiSearch, HiMenu } from "react-icons/hi";
 
 const Navbar = () => {
   return (
-    <nav className="flex sticky top-0 backdrop-blur-md shadow-md bg-white/60 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200">
+    <nav className="flex sticky top-0 z-10 backdrop-blur-md shadow-md bg-white/60 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200">
       {/* LibreFly´s Logo */}
       <h1 className="text-2xl px-2 md:text-xl">
         <Link
@@ -47,7 +47,7 @@ const Navbar = () => {
       {/* Button to Create a new book */}
       <div className="hidden md:flex">
         <Link
-          className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-black"
+          className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400"
           to="/new-book"
         >
           + Create new book

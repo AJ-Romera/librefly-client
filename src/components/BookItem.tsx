@@ -23,7 +23,7 @@ const BookItem = ({ book, loadBooks }: Props) => {
     <div className="w-full relative group overflow-hidden max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow mx-auto">
       <div onClick={() => navigate(`book-details/${book._id}`)}>
         <img
-          className="mx-auto cursor-pointer w-full object-cover p-6"
+          className="mx-auto cursor-pointer w-full object-cover p-6 rounded-[30px]"
           src="https://miblart.com/wp-content/uploads/2020/01/crime-and-mystery-cover-scaled-1.jpeg"
           /* https://imagessl7.casadellibro.com/a/l/t5/67/9781471156267.jpg */
           alt="book cover"
