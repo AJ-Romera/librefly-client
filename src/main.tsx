@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import CreateBook from "./pages/CreateBook";
-import EditBook from "./pages/EditBook";
+import DetailsPage from "./pages/DetailsPage";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-book" element={<CreateBook />} />
-          <Route path="/books/:id" element={<CreateBook />} />
-          <Route path="edit/books/:id" element={<EditBook />} />
+          <Route path="/edit-book/:id" element={<CreateBook />} />
+          <Route path="book-details/:id" element={<DetailsPage />} />
         </Routes>
         <ToastContainer />
       </div>
