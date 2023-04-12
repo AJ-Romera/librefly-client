@@ -8,7 +8,7 @@ const Navbar = () => {
       {/* LibreFly´s Logo */}
       <h1 className="text-2xl px-2 md:text-xl">
         <Link
-          className="block lg:inline-block lg:mt-0 hover:text-red-500 mr-4"
+          className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
           to="/"
         >
           Libre<span className="font-bold">Fly</span>
@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center w-auto">
         <div className="text-sm">
           <Link
-            className="block lg:inline-block lg:mt-0 hover:text-red-500 mr-4"
+            className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
             to="/"
           >
             Books
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
         <div className="text-sm">
           <Link
-            className="block lg:inline-block lg:mt-0 hover:text-red-500 mr-4"
+            className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
             to="/example1"
           >
             example
@@ -65,7 +65,7 @@ const Navbar = () => {
         {/* Mobile Button to create a new book */}
         <div>
           <Link
-            className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-black"
+            className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:text-base hover:bg-blue-400"
             to="/new-book"
           >
             <HiPlus />
