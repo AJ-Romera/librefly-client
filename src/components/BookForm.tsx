@@ -71,6 +71,7 @@ const BookForm = () => {
                 value={book.name}
                 placeholder="Write a title for the book"
                 autoFocus
+                required
                 onChange={handleInputChange}
               />
             </div>
@@ -83,7 +84,7 @@ const BookForm = () => {
                 name="isbn"
                 value={book.isbn}
                 placeholder="Write the ISBN of the book"
-                autoFocus
+                required
                 onChange={handleInputChange}
               />
             </div>
@@ -96,7 +97,7 @@ const BookForm = () => {
                 name="author_first_name"
                 value={book.author_first_name}
                 placeholder="Write the first name of the author"
-                autoFocus
+                required
                 onChange={handleInputChange}
               />
             </div>
@@ -109,7 +110,7 @@ const BookForm = () => {
                 name="author_last_name"
                 value={book.author_last_name}
                 placeholder="Write the last name of the author"
-                autoFocus
+                required
                 onChange={handleInputChange}
               />
             </div>
