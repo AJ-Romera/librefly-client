@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import CreateBook from "./pages/CreateBook";
 import DetailsPage from "./pages/DetailsPage";
+import Footer from "./components/Footer";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         </Routes>
         <ToastContainer />
       </div>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
