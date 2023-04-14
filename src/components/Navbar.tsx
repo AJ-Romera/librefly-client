@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   HiPlus,
   HiSearch,
   HiMenu,
-  HiPlusSm,
+  HiOutlineX,
   HiPlusCircle,
 } from "react-icons/hi";
 
 const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleNav = () => {
+    setOpenMenu(!openMenu);
+  };
+
   return (
     <nav className="flex sticky top-0 z-10 backdrop-blur-md shadow-md bg-white/60 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200">
       {/* LibreFly´s Logo */}
@@ -80,8 +86,32 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div>
-          <HiMenu />
+        <div className="cursor-pointer" onClick={handleNav}>
+          {openMenu ? <HiOutlineX size={20} /> : <HiMenu size={20} />}
+        </div>
+        <div
+          className={
+            openMenu
+              ? "fixed pt-28 uppercase bg-gray-400 left-0 top-0 w-[60%] border-r border-r-gray-900 h-screen ease-in-out duration-500"
+              : "fixed left-[-100%] ease-out duration-1000"
+          }
+        >
+          <div className="text-sm">
+            <Link
+              className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4 p-4 border-b border-b-slate-100"
+              to="/"
+            >
+              Books
+            </Link>
+          </div>
+          <div className="text-sm">
+            <Link
+              className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4 p-4 border-b border-b-slate-100"
+              to="/example1"
+            >
+              example
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
