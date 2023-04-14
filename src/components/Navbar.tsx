@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HiPlus, HiSearch, HiMenu } from "react-icons/hi";
+import {
+  HiPlus,
+  HiSearch,
+  HiMenu,
+  HiPlusSm,
+  HiPlusCircle,
+} from "react-icons/hi";
 
 const Navbar = () => {
   return (
@@ -16,7 +22,7 @@ const Navbar = () => {
       </h1>
 
       {/* Search */}
-      <div className="hidden md:flex bg-gray-200 rounded-full items-center px-2 w-[500px]">
+      <div className="hidden md:flex bg-gray-200 rounded-full items-center px-2 w-[44%]">
         <input
           className="bg-transparent p-2 w-full focus:outline-none"
           type="text"
@@ -47,10 +53,11 @@ const Navbar = () => {
       {/* Button to Create a new book */}
       <div className="hidden md:flex">
         <Link
-          className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400"
+          className="flex items-center gap-1 text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400"
           to="/new-book"
         >
-          + Create new book
+          <HiPlusCircle className="text-blue-600 text-lg" />
+          Publish book
         </Link>
       </div>
 
