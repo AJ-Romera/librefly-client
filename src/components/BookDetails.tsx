@@ -24,10 +24,10 @@ const BookDetails = () => {
     }
   }, []);
 
-  return (
+  return book.name !== "" ? (
     <section className="text-gray-700 body-font overflow-hidden bg-white">
       <div className="container px-5 pt-10 pb-24 lg:py-24 mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap ">
+        <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <img
             alt={`${book.name} book cover`}
             className="lg:w-1/2 w-full h-[29rem] object-contain object-center rounded border border-gray-200 lg:h-[36rem] lg:px-10 lg:py-6 mt-6 lg:mt-0"
@@ -205,6 +205,10 @@ const BookDetails = () => {
         </div>
       </div>
     </section>
+  ) : (
+    <div className="flex items-center justify-center my-12 h-[35rem]">
+      <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-36 w-36"></div>
+    </div>
   );
 };
 
