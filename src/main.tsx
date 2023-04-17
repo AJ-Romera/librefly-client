@@ -11,6 +11,7 @@ import CreateBook from "./pages/CreateBook";
 import DetailsPage from "./pages/DetailsPage";
 import Footer from "./components/Footer";
 import ScrollToTop from "./helpers/ScrollToTop";
+import NotFound404 from "./pages/NotFound404";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/new-book" element={<CreateBook />} />
           <Route path="/edit-book/:id" element={<CreateBook />} />
           <Route path="book-details/:id" element={<DetailsPage />} />
+          <Route path="*" element={<NotFound404 />} />
         </Routes>
         <ToastContainer />
       </div>
