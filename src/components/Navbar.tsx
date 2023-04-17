@@ -45,7 +45,7 @@ const Navbar = () => {
                 ? "block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
                 : isActive
                 ? "block lg:inline-block lg:mt-0 mr-4 text-blue-600"
-                : "hover:text-blue-500"
+                : "block lg:inline-block lg:mt-0 mr-4 hover:text-blue-500"
             }
             to="/"
           >
@@ -56,10 +56,10 @@ const Navbar = () => {
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
-                ? "block lg:inline-block lg:mt-0 hover:text-blue-500 ml-4"
+                ? "block lg:inline-block lg:mt-0 hover:text-blue-500"
                 : isActive
-                ? "block lg:inline-block lg:mt-0 ml-4 text-blue-600"
-                : "hover:text-blue-500"
+                ? "block lg:inline-block lg:mt-0 text-blue-600"
+                : "block lg:inline-block lg:mt-0 hover:text-blue-500"
             }
             to="/example1"
           >
@@ -111,12 +111,11 @@ const Navbar = () => {
           <div className="text-sm">
             <NavLink
               onClick={handleNav}
-              // className="block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
               className={({ isActive, isPending }) =>
                 isPending
                   ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
                   : isActive
-                  ? "block lg:inline-block lg:mt-0 text-blue-300 mr-4 p-4 border-b border-b-slate-100"
+                  ? "block lg:inline-block lg:mt-0 text-blue-300 mr-4 ml-4 p-4 border-b border-b-slate-100"
                   : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
               }
               to="/"
@@ -127,7 +126,6 @@ const Navbar = () => {
           <div className="text-sm">
             <NavLink
               onClick={handleNav}
-              // className="block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
               className={({ isActive, isPending }) =>
                 isPending
                   ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
