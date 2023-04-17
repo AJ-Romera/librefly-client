@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   HiPlus,
   HiSearch,
@@ -39,20 +39,32 @@ const Navbar = () => {
       {/* Menu */}
       <div className="hidden md:flex items-center w-auto">
         <div className="text-sm">
-          <Link
-            className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
+                : isActive
+                ? "block lg:inline-block lg:mt-0 mr-4 text-blue-600"
+                : "hover:text-blue-500"
+            }
             to="/"
           >
             Books
-          </Link>
+          </NavLink>
         </div>
         <div className="text-sm">
-          <Link
-            className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "block lg:inline-block lg:mt-0 hover:text-blue-500 ml-4"
+                : isActive
+                ? "block lg:inline-block lg:mt-0 ml-4 text-blue-600"
+                : "hover:text-blue-500"
+            }
             to="/example1"
           >
-            example
-          </Link>
+            Example
+          </NavLink>
         </div>
       </div>
 
@@ -92,25 +104,41 @@ const Navbar = () => {
         <div
           className={
             openMenu
-              ? "fixed pt-28 uppercase bg-gray-400 left-0 top-0 w-[60%] border-r border-r-gray-900 h-screen ease-in-out duration-500"
+              ? "fixed pt-28 uppercase bg-blue-500 left-0 top-0 w-[60%] border-r border-r-gray-900 h-screen ease-in-out duration-500"
               : "fixed left-[-100%] ease-out duration-1000"
           }
         >
           <div className="text-sm">
-            <Link
-              className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4 p-4 border-b border-b-slate-100"
+            <NavLink
+              onClick={handleNav}
+              // className="block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+                  : isActive
+                  ? "block lg:inline-block lg:mt-0 text-blue-300 mr-4 p-4 border-b border-b-slate-100"
+                  : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+              }
               to="/"
             >
               Books
-            </Link>
+            </NavLink>
           </div>
           <div className="text-sm">
-            <Link
-              className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4 p-4 border-b border-b-slate-100"
+            <NavLink
+              onClick={handleNav}
+              // className="block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+                  : isActive
+                  ? "block lg:inline-block lg:mt-0 text-blue-300 mr-4 p-4 border-b border-b-slate-100"
+                  : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+              }
               to="/example1"
             >
-              example
-            </Link>
+              Example
+            </NavLink>
           </div>
         </div>
       </div>
