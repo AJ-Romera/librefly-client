@@ -10,6 +10,7 @@ const BookDetails = () => {
     isbn: "",
     author_first_name: "",
     author_last_name: "",
+    cover: "",
   });
 
   const loadBook = async (id: string) => {
@@ -25,14 +26,43 @@ const BookDetails = () => {
   }, []);
 
   return book.name !== "" ? (
-    <section className="text-gray-700 body-font overflow-hidden bg-white">
-      <div className="container px-5 pt-10 pb-24 lg:py-24 mx-auto">
+    <section className="text-gray-700 body-font bg-white">
+      <div className="container px-5 pt-10 py-14 lg:py-16 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <img
-            alt={`${book.name} book cover`}
-            className="lg:w-1/2 w-full h-[29rem] object-contain object-center rounded border border-gray-200 lg:h-[36rem] lg:px-10 lg:py-6 mt-6 lg:mt-0"
-            src="https://miblart.com/wp-content/uploads/2020/01/crime-and-mystery-cover-scaled-1.jpeg"
-          />
+          <div className="lg:w-1/2 w-full h-[35rem] object-contain object-center rounded border border-gray-200 lg:h-[42rem] lg:px-10 lg:py-6 py-6 mt-6 lg:mt-0 lg:sticky lg:top-40">
+            <img
+              className="flex w-2/3 object-contain object-center items-center justify-center mx-auto rounded border border-gray-200"
+              src={book.cover}
+              alt={`${book.name} book cover`}
+            />
+
+            <div className="grid lg:grid-cols-2 justify-center items-center mx-auto gap-2 mt-5 justify-items-center">
+              <p className="text-sm text-gray-500 tracking-wide">
+                <span className="font-bold">Binding: </span>
+                {book.binding}
+              </p>
+              <p className="text-sm text-gray-500 tracking-wide">
+                <span className="font-bold">Pages: </span>
+                {book.pages}
+              </p>
+              <p className="text-sm text-gray-500 tracking-wide">
+                <span className="font-bold">Genre: </span>
+                {book.genre}
+              </p>
+              <p className="text-sm text-gray-500 tracking-wide">
+                <span className="font-bold">Publisher: </span>
+                {book.publisher}
+              </p>
+              <p className="text-sm text-gray-500 tracking-wide">
+                <span className="font-bold">Publication Year: </span>
+                {book.year_of_publication}
+              </p>
+              <p className="text-sm text-gray-500 tracking-wide">
+                <span className="font-bold">Release Date: </span>
+                {book.release_date}
+              </p>
+            </div>
+          </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {book.author_first_name} {book.author_last_name}
@@ -109,7 +139,7 @@ const BookDetails = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-5 h-5"
+                    className="w-5 h-5 hover:text-blue-500"
                     viewBox="0 0 24 24"
                   >
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -121,7 +151,7 @@ const BookDetails = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-5 h-5"
+                    className="w-5 h-5 hover:text-blue-400"
                     viewBox="0 0 24 24"
                   >
                     <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
@@ -133,7 +163,7 @@ const BookDetails = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    className="w-5 h-5"
+                    className="w-5 h-5 hover:text-green-400"
                     viewBox="0 0 24 24"
                   >
                     <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
@@ -141,46 +171,8 @@ const BookDetails = () => {
                 </a>
               </span>
             </div>
-            <p className="leading-relaxed">
-              Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-              sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
-              juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-              seitan poutine tumeric. Gastropub blue bottle austin listicle
-              pour-over, neutra jean shorts keytar banjo tattooed umami
-              cardigan.
-            </p>
-            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-              {/* <div className="flex">
-                <span className="mr-3">Color</span>
-                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button className="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>
-              </div>
-              <div className="flex ml-6 items-center">
-                <span className="mr-3">Size</span>
-                <div className="relative">
-                  <select className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">
-                    <option>SM</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                  </select>
-                  <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                  </span>
-                </div>
-              </div> */}
-            </div>
+            <p className="leading-relaxed text-slate-800">{book.blurb}</p>
+            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"></div>
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900">
                 XX,XX€
