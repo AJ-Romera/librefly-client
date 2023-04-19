@@ -7,9 +7,12 @@ import {
   HiOutlineX,
   HiPlusCircle,
   HiChevronUp,
+  HiOutlineSun,
+  HiOutlineMoon,
 } from "react-icons/hi";
 import { useAppDispatch } from "../store/store";
 import { setSearchTerm } from "../store/features/searchSlice";
+import ThemeToggle from "./ThemeToggle";
 
 type FormChange = FormEvent<HTMLFormElement>;
 
@@ -92,8 +95,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Button to Create a new book */}
+      {/* ThemeToggle & Button to Create a new book */}
       <div className="hidden md:flex">
+        <div className="flex items-center justify-center cursor-pointer mx-2">
+          <ThemeToggle />
+        </div>
         <Link
           className="flex items-center gap-1 text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400"
           to="/new-book"
@@ -105,7 +111,12 @@ const Navbar = () => {
 
       {/* MOBILE */}
 
-      <div className="flex md:hidden justify-between items-center w-28">
+      <div className="flex md:hidden justify-between items-center w-36">
+        {/* hi */}
+        <div className="flex items-center justify-center ">
+          <HiOutlineMoon size={16} />
+        </div>
+
         {/* Mobile Search */}
         <div>
           <div className="cursor-pointer" onClick={handleSearchBar}>
