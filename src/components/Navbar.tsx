@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   HiPlus,
@@ -7,12 +7,26 @@ import {
   HiOutlineX,
   HiPlusCircle,
 } from "react-icons/hi";
+import { useAppDispatch } from "../store/store";
+import { setSearchTerm } from "../store/features/searchSlice";
+
+type FormChange = FormEvent<HTMLFormElement>;
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [searchText, setSearchText] = useState("");
+
+  const dispatch = useAppDispatch();
 
   const handleNav = () => {
     setOpenMenu(!openMenu);
+  };
+
+  const handleSearch = (e: FormChange) => {
+    e.preventDefault();
+
+    dispatch(setSearchTerm(searchText));
+    setSearchText("");
   };
 
   return (
@@ -29,11 +43,15 @@ const Navbar = () => {
 
       {/* Search */}
       <div className="hidden md:flex bg-gray-200 rounded-full items-center px-2 w-[44%]">
-        <input
-          className="bg-transparent p-2 w-full focus:outline-none"
-          type="text"
-          placeholder="Search books"
-        />
+        <form onSubmit={handleSearch}>
+          <input
+            className="bg-transparent p-2 w-full focus:outline-none"
+            type="text"
+            placeholder="Search books"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+        </form>
       </div>
 
       {/* Menu */}
