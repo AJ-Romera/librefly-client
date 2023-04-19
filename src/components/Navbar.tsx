@@ -6,6 +6,7 @@ import {
   HiMenu,
   HiOutlineX,
   HiPlusCircle,
+  HiChevronUp,
 } from "react-icons/hi";
 import { useAppDispatch } from "../store/store";
 import { setSearchTerm } from "../store/features/searchSlice";
@@ -14,12 +15,17 @@ type FormChange = FormEvent<HTMLFormElement>;
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openSearchBar, setOpenSearchBar] = useState(false);
   const [searchText, setSearchText] = useState("");
 
   const dispatch = useAppDispatch();
 
   const handleNav = () => {
     setOpenMenu(!openMenu);
+  };
+
+  const handleSearchBar = () => {
+    setOpenSearchBar(!openSearchBar);
   };
 
   const handleSearch = (e: FormChange) => {
@@ -102,7 +108,29 @@ const Navbar = () => {
       <div className="flex md:hidden justify-between items-center w-28">
         {/* Mobile Search */}
         <div>
-          <HiSearch />
+          <div className="cursor-pointer" onClick={handleSearchBar}>
+            {openSearchBar ? <HiChevronUp size={16} /> : <HiSearch size={16} />}
+          </div>
+        </div>
+
+        <div
+          className={
+            openSearchBar
+              ? "fixed bg-blue-400/90 left-0 top-20 w-full h-20 ease-out duration-500 py-5 border-b-2 border-b-blue-400"
+              : "fixed pt-2 top-[-100%] left-0 w-full ease-in duration-500 bg-blue-500/30 h-16"
+          }
+        >
+          <div className="flex md:hidden bg-gray-200 rounded-full mx-auto items-center px-2 w-[90%]">
+            <form onSubmit={handleSearch}>
+              <input
+                className="bg-transparent p-2 w-full focus:outline-none"
+                type="text"
+                placeholder="Search books"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+            </form>
+          </div>
         </div>
 
         {/* Mobile Button to create a new book */}
