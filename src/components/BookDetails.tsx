@@ -171,7 +171,9 @@ const BookDetails = () => {
                 </a>
               </span>
             </div>
-            <p className="leading-relaxed text-slate-800">{book.blurb}</p>
+            <p className="leading-relaxed whitespace-pre-line text-slate-800">
+              {book.blurb}
+            </p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"></div>
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900">
