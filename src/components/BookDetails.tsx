@@ -26,51 +26,51 @@ const BookDetails = () => {
   }, []);
 
   return book.name !== "" ? (
-    <section className="text-gray-700 body-font bg-white">
+    <section className="text-gray-700 body-font">
       <div className="container px-5 pt-10 py-14 lg:py-16 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <div className="lg:w-1/2 w-full h-[35rem] object-contain object-center rounded border border-gray-200 lg:h-[42rem] lg:px-10 lg:py-6 py-6 mt-6 lg:mt-0 lg:sticky lg:top-40">
+          <div className="lg:w-1/2 w-full h-[35rem] object-contain object-center rounded border border-gray-200 dark:border-[#2D2F40] lg:h-[42rem] lg:px-10 lg:py-6 py-6 mt-6 lg:mt-0 lg:sticky lg:top-40">
             <img
-              className="flex w-2/3 object-contain object-center items-center justify-center mx-auto rounded border border-gray-200"
+              className="flex w-2/3 object-contain object-center items-center justify-center mx-auto rounded border dark:border-[#2D2F40]"
               src={book.cover}
               alt={`${book.name} book cover`}
             />
 
             <div className="grid lg:grid-cols-2 justify-center items-center mx-auto gap-2 mt-5 justify-items-center">
-              <p className="text-sm text-gray-500 tracking-wide">
+              <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Binding: </span>
                 {book.binding}
               </p>
-              <p className="text-sm text-gray-500 tracking-wide">
+              <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Pages: </span>
                 {book.pages}
               </p>
-              <p className="text-sm text-gray-500 tracking-wide">
+              <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Genre: </span>
                 {book.genre}
               </p>
-              <p className="text-sm text-gray-500 tracking-wide">
+              <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Publisher: </span>
                 {book.publisher}
               </p>
-              <p className="text-sm text-gray-500 tracking-wide">
+              <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Publication Year: </span>
                 {book.year_of_publication}
               </p>
-              <p className="text-sm text-gray-500 tracking-wide">
+              <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Release Date: </span>
                 {book.release_date}
               </p>
             </div>
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h2 className="text-sm title-font text-gray-500 tracking-widest">
+            <h2 className="text-sm title-font text-gray-500 dark:text-[#c8d5ff] tracking-widest">
               {book.author_first_name} {book.author_last_name}
             </h2>
-            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+            <h2 className="text-gray-900 dark:text-[#F7F8FB] text-3xl title-font font-medium mb-1">
               {book.name}
-            </h1>
-            <h3 className="text-xs title-font text-gray-400 tracking-widest">
+            </h2>
+            <h3 className="text-xs title-font text-gray-400 dark:text-[#c8d5ff] tracking-widest">
               {book.isbn}
             </h3>
             <div className="flex mb-4">
@@ -81,7 +81,7 @@ const BookDetails = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-4 h-4 text-blue-400"
+                  className="w-4 h-4 text-blue-400 dark:text-blue-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -92,7 +92,7 @@ const BookDetails = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-4 h-4 text-blue-400"
+                  className="w-4 h-4 text-blue-400 dark:text-blue-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -103,7 +103,7 @@ const BookDetails = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-4 h-4 text-blue-400"
+                  className="w-4 h-4 text-blue-400 dark:text-blue-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -114,7 +114,7 @@ const BookDetails = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-4 h-4 text-blue-400"
+                  className="w-4 h-4 text-blue-400 dark:text-blue-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -125,14 +125,16 @@ const BookDetails = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-4 h-4 text-blue-400"
+                  className="w-4 h-4 text-blue-400 dark:text-blue-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                 </svg>
-                <span className="text-gray-600 ml-3">4 Reviews</span>
+                <span className="text-gray-600 dark:text-[#c8d5ff] ml-3">
+                  4 Reviews
+                </span>
               </span>
-              <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+              <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 dark:border-gray-500">
                 <a className="text-gray-500">
                   <svg
                     fill="currentColor"
@@ -171,15 +173,15 @@ const BookDetails = () => {
                 </a>
               </span>
             </div>
-            <p className="leading-relaxed whitespace-pre-line text-slate-800">
+            <p className="leading-relaxed whitespace-pre-line text-slate-800 dark:text-[#F7F8FB]">
               {book.blurb}
             </p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"></div>
             <div className="flex">
-              <span className="title-font font-medium text-2xl text-gray-900">
-                XX,XX€
+              <span className="title-font font-medium text-2xl text-gray-900 dark:text-[#c8d5ff]">
+                XX,XX €
               </span>
-              <button className="flex ml-auto text-white bg-blue-400 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">
+              <button className="flex ml-auto text-white bg-blue-400 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded dark:text-white dark:bg-[#4075c5] dark:hover:bg-transparent dark:hover:border-white dark:border-transparent dark:hover:text-[#8EBBFF]">
                 Buy
               </button>
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
@@ -188,7 +190,7 @@ const BookDetails = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  className="w-5 h-5"
+                  className="w-5 h-5 hover:text-red-500"
                   viewBox="0 0 24 24"
                 >
                   <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>

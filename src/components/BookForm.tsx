@@ -91,17 +91,17 @@ const BookForm = () => {
   return (
     <div className="flex justify-center items-center h-full w-full">
       <div className="container mx-auto py-8">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+        <h2 className="text-2xl font-bold mb-6 text-center dark:text-[#F7F8FB]">
           {params.id ? "Edit Book" : "Publish a Book"}
         </h2>
         <form
-          className="w-full max-w-sm lg:max-w-2xl mx-auto p-8 rounded-md shadow-md bg-blue-300/30"
+          className="w-full max-w-sm lg:max-w-2xl mx-auto p-8 rounded-md shadow-md bg-blue-300/30 dark:bg-[#2F3855]"
           id="form"
           onSubmit={handleSubmit}
         >
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
               htmlFor="book-title"
             >
               Book Title (*)
@@ -121,7 +121,7 @@ const BookForm = () => {
 
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
               htmlFor="isbn"
             >
               ISBN (*)
@@ -141,7 +141,7 @@ const BookForm = () => {
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="author_first_name"
               >
                 Author's First Name (*)
@@ -158,7 +158,7 @@ const BookForm = () => {
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="author_last_name"
               >
                 Author's Last Name (*)
@@ -178,7 +178,7 @@ const BookForm = () => {
 
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
               htmlFor="cover"
             >
               Book´s Cover (*)
@@ -201,7 +201,7 @@ const BookForm = () => {
 
           <div className="mb-4">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
               htmlFor="blurb"
             >
               Blurb
@@ -220,7 +220,7 @@ const BookForm = () => {
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-2/12 px-3 mb-6 md:mb-0">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="pages"
               >
                 Pages
@@ -237,7 +237,7 @@ const BookForm = () => {
             </div>
             <div className="w-full md:w-10/12 px-3 mb-6 md:mb-0">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="genre"
               >
                 Genre
@@ -280,7 +280,7 @@ const BookForm = () => {
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="binding"
               >
                 Binding
@@ -303,7 +303,7 @@ const BookForm = () => {
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="publisher"
               >
                 Publisher
@@ -323,7 +323,7 @@ const BookForm = () => {
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-2/6 px-3 mb-6 md:mb-0">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="year_of_publication"
               >
                 Publication Year
@@ -340,7 +340,7 @@ const BookForm = () => {
             </div>
             <div className="w-full md:w-2/3 px-3 mb-6 md:mb-0">
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-700 dark:text-[#F7F8FB] text-sm font-bold mb-2"
                 htmlFor="release_date"
               >
                 Release Date
