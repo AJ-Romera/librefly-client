@@ -34,8 +34,6 @@ const BookList = () => {
               book.name.toLowerCase().includes(searchTerm) ||
               book.author_first_name.toLowerCase().includes(searchTerm) ||
               book.author_last_name.toLowerCase().includes(searchTerm) ||
-              (book.author_last_name.toLowerCase().includes(searchTerm) &&
-                book.author_last_name.toLowerCase().includes(searchTerm)) ||
               book.isbn.toLowerCase().includes(searchTerm)
           )
           .map((book) => {
