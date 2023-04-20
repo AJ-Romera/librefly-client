@@ -23,7 +23,7 @@ const BookItem = ({ book, loadBooks }: Props) => {
     <div className="w-full relative group overflow-hidden max-w-sm bg-gray-50 border border-gray-200 rounded-lg shadow mx-auto dark:border-[#2D2F40] dark:bg-[#2F3855]">
       <div onClick={() => navigate(`book-details/${book._id}`)}>
         <img
-          className="mx-auto cursor-pointer w-full object-cover p-6 rounded-[30px]"
+          className="mx-auto cursor-pointer w-full h-80 object-contain p-6 rounded-[30px]"
           src={book.cover}
           alt={`${book.name} book cover`}
         />

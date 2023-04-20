@@ -36,7 +36,7 @@ const BookDetails = () => {
               alt={`${book.name} book cover`}
             />
 
-            <div className="grid lg:grid-cols-2 justify-center items-center mx-auto gap-2 mt-5 justify-items-center">
+            <div className="grid lg:grid-cols-2 justify-center items-center mx-auto gap-2 mt-6 justify-items-center">
               <p className="text-sm text-gray-500 dark:text-[#c8d5ff] tracking-wide">
                 <span className="font-bold">Binding: </span>
                 {book.binding}

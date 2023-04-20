@@ -95,7 +95,7 @@ const BookForm = () => {
           {params.id ? "Edit Book" : "Publish a Book"}
         </h2>
         <form
-          className="w-full max-w-sm lg:max-w-2xl mx-auto p-8 rounded-md shadow-md bg-blue-300/30 dark:bg-[#2F3855]"
+          className="w-full max-w-2xl lg:max-w-2xl mx-auto p-8 rounded-md shadow-md bg-blue-300/30 dark:bg-[#2F3855]"
           id="form"
           onSubmit={handleSubmit}
         >
