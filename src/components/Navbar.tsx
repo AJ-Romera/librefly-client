@@ -50,7 +50,7 @@ const Navbar = () => {
 
       {/* Search */}
       <div className="hidden md:flex bg-gray-200 rounded-full items-center px-2 w-[44%]">
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch} className="w-full">
           <input
             className="bg-transparent p-2 w-full focus:outline-none"
             type="text"
@@ -130,7 +130,7 @@ const Navbar = () => {
           }
         >
           <div className="flex md:hidden bg-gray-200 rounded-full mx-auto items-center px-2 w-[90%]">
-            <form onSubmit={handleSearch}>
+            <form onSubmit={handleSearch} className="w-full">
               <input
                 className="bg-transparent p-2 w-full focus:outline-none"
                 type="text"
