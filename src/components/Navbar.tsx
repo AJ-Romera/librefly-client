@@ -41,7 +41,7 @@ const Navbar = () => {
       {/* LibreFly´s Logo */}
       <h1 className="text-2xl px-2 md:text-xl dark:text-[#F7F8FB]">
         <Link
-          className="block lg:inline-block lg:mt-0 hover:text-blue-500 dark:hover:text-[#576CBC] mr-4"
+          className="block lg:inline-block lg:mt-0 hover:text-blue-500 dark:hover:text-[#8EBBFF] mr-4"
           to="/"
         >
           Libre<span className="font-bold">Fly</span>
@@ -49,7 +49,7 @@ const Navbar = () => {
       </h1>
 
       {/* Search */}
-      <div className="hidden md:flex bg-gray-200 rounded-full items-center px-2 w-[44%]">
+      <div className="hidden md:flex bg-gray-200 dark:bg-[#FDFFFF] rounded-full items-center px-2 w-[44%]">
         <form onSubmit={handleSearch} className="w-full">
           <input
             className="bg-transparent p-2 w-full focus:outline-none"
@@ -67,10 +67,10 @@ const Navbar = () => {
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
-                ? "block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
+                ? "block lg:inline-block lg:mt-0 hover:text-blue-500 dark:hover:text-[#8EBBFF] mr-4"
                 : isActive
-                ? "block lg:inline-block lg:mt-0 mr-4 text-blue-600"
-                : "block lg:inline-block lg:mt-0 mr-4 hover:text-blue-500"
+                ? "block lg:inline-block lg:mt-0 mr-4 text-blue-600 dark:text-blue-400"
+                : "block lg:inline-block lg:mt-0 mr-4 hover:text-blue-500 dark:hover:text-[#8EBBFF]"
             }
             to="/"
           >
@@ -81,10 +81,10 @@ const Navbar = () => {
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
-                ? "block lg:inline-block lg:mt-0 hover:text-blue-500"
+                ? "block lg:inline-block lg:mt-0 hover:text-blue-500 dark:hover:text-[#8EBBFF]"
                 : isActive
-                ? "block lg:inline-block lg:mt-0 text-blue-600"
-                : "block lg:inline-block lg:mt-0 hover:text-blue-500"
+                ? "block lg:inline-block lg:mt-0 text-blue-600 dark:text-blue-400"
+                : "block lg:inline-block lg:mt-0 hover:text-blue-500 dark:hover:text-[#8EBBFF]"
             }
             to="/example1"
           >
@@ -99,7 +99,7 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
         <Link
-          className="flex items-center gap-1 text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400 dark:text-white dark:border-white dark:hover:text-white dark:hover:bg-[#8EBBFF]"
+          className="flex items-center gap-1 text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400 dark:text-white dark:bg-[#4075c5] dark:hover:bg-transparent dark:hover:border-white dark:border-transparent dark:hover:text-[#8EBBFF]"
           to="/new-book"
         >
           <HiPlusCircle className="text-blue-600 dark:text-[#FDFFFE]  text-lg" />
@@ -117,7 +117,10 @@ const Navbar = () => {
 
         {/* Mobile Search */}
         <div>
-          <div className="cursor-pointer" onClick={handleSearchBar}>
+          <div
+            className="cursor-pointer dark:text-[#FDFFFE]"
+            onClick={handleSearchBar}
+          >
             {openSearchBar ? <HiChevronUp size={16} /> : <HiSearch size={16} />}
           </div>
         </div>
@@ -125,7 +128,7 @@ const Navbar = () => {
         <div
           className={
             openSearchBar
-              ? "fixed bg-blue-400/90 left-0 top-20 w-full h-20 ease-out duration-500 py-5 border-b-2 border-b-blue-400"
+              ? "fixed bg-blue-400/90 dark:bg-[#2F3855]/80 left-0 top-20 w-full h-20 ease-out duration-500 py-5 border-b-2 border-b-blue-400 dark:border-b-[#2F3855]"
               : "fixed pt-2 top-[-100%] left-0 w-full ease-in duration-500 bg-blue-500/30 h-16"
           }
         >
@@ -145,7 +148,7 @@ const Navbar = () => {
         {/* Mobile Button to create a new book */}
         <div>
           <Link
-            className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:text-base hover:bg-blue-400"
+            className="flex text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400 dark:text-white dark:bg-[#4075c5] dark:hover:bg-transparent dark:hover:border-white dark:border-transparent dark:hover:text-[#8EBBFF]"
             to="/new-book"
           >
             <HiPlus />
@@ -153,13 +156,13 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="cursor-pointer" onClick={handleNav}>
+        <div className="cursor-pointer dark:text-[#FDFFFE]" onClick={handleNav}>
           {openMenu ? <HiOutlineX size={20} /> : <HiMenu size={20} />}
         </div>
         <div
           className={
             openMenu
-              ? "fixed pt-28 uppercase bg-blue-500 left-0 top-0 w-[60%] border-r border-r-gray-900 h-screen ease-in-out duration-500"
+              ? "fixed pt-28 uppercase bg-blue-500 dark:bg-[#2F3855] left-0 top-0 w-[60%] border-r border-r-gray-900 dark:border-r-[#242b42]/80 h-screen ease-in-out duration-500"
               : "fixed left-[-100%] ease-out duration-1000"
           }
         >
@@ -168,10 +171,10 @@ const Navbar = () => {
               onClick={handleNav}
               className={({ isActive, isPending }) =>
                 isPending
-                  ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+                  ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100 dark:text-[#FDFFFE]"
                   : isActive
-                  ? "block lg:inline-block lg:mt-0 text-blue-300 mr-4 ml-4 p-4 border-b border-b-slate-100"
-                  : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+                  ? "block lg:inline-block lg:mt-0 text-blue-300 dark:text-[#8EBBFF] mr-4 ml-4 p-4 border-b border-b-slate-100"
+                  : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100 dark:text-[#FDFFFE]"
               }
               to="/"
             >
@@ -183,10 +186,10 @@ const Navbar = () => {
               onClick={handleNav}
               className={({ isActive, isPending }) =>
                 isPending
-                  ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+                  ? "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100 dark:text-[#FDFFFE]"
                   : isActive
-                  ? "block lg:inline-block lg:mt-0 text-blue-300 mr-4 p-4 border-b border-b-slate-100"
-                  : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100"
+                  ? "block lg:inline-block lg:mt-0 text-blue-300 dark:text-[#8EBBFF] mr-4 ml-4 p-4 border-b border-b-slate-100"
+                  : "block lg:inline-block lg:mt-0 text-gray-50 hover:text-blue-100 mr-4 p-4 border-b border-b-slate-100 dark:text-[#FDFFFE]"
               }
               to="/example1"
             >

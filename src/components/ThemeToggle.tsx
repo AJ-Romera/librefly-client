@@ -28,7 +28,10 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button className="p-2 dark:text-[#FDFFFE]" onClick={handleThemeSwitch}>
+    <button
+      className="p-2 dark:text-[#FDFFFE] dark:hover:text-yellow-300 hover:text-slate-500"
+      onClick={handleThemeSwitch}
+    >
       {theme === "dark" ? (
         <HiOutlineSun size={18} />
       ) : (
