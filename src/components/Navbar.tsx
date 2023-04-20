@@ -7,8 +7,6 @@ import {
   HiOutlineX,
   HiPlusCircle,
   HiChevronUp,
-  HiOutlineSun,
-  HiOutlineMoon,
 } from "react-icons/hi";
 import { useAppDispatch } from "../store/store";
 import { setSearchTerm } from "../store/features/searchSlice";
@@ -111,10 +109,10 @@ const Navbar = () => {
 
       {/* MOBILE */}
 
-      <div className="flex md:hidden justify-between items-center w-36">
-        {/* hi */}
-        <div className="flex items-center justify-center ">
-          <HiOutlineMoon size={16} />
+      <div className="flex md:hidden justify-between items-center w-40">
+        {/* Mobile ThemeToggle */}
+        <div className="flex cursor-pointer">
+          <ThemeToggle />
         </div>
 
         {/* Mobile Search */}
