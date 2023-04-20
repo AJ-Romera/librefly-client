@@ -29,7 +29,7 @@ const BookDetails = () => {
     <section className="text-gray-700 body-font">
       <div className="container px-5 pt-10 py-14 lg:py-16 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <div className="lg:w-1/2 w-full h-[35rem] object-contain object-center rounded border border-gray-200 dark:border-[#2D2F40] lg:h-[42rem] lg:px-10 lg:py-6 py-6 mt-6 lg:mt-0 lg:sticky lg:top-40">
+          <div className="lg:w-1/2 w-full h-auto object-contain object-center rounded border border-gray-200 dark:border-[#2D2F40] lg:h-[42rem] lg:px-10 lg:py-6 py-6 mt-6 lg:mt-0 lg:sticky lg:top-40">
             <img
               className="flex w-2/3 object-contain object-center items-center justify-center mx-auto rounded border dark:border-[#2D2F40]"
               src={book.cover}
