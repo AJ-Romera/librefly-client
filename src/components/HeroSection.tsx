@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section>
       <div className="bg-hero-1 text-white">
-        <div className="bg-gradient-to-r from-white to-blue-500/40 backdrop-blur-sm py-6 mt-6">
+        <div className="bg-gradient-to-r from-white to-blue-500/40 backdrop-blur-sm py-6 mt-6 dark:bg-gradient-to-r dark:from-[#2F3855]/80 dark:to-[#282932]/40">
           <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
             <div className="flex flex-col w-full lg:w-1/3 justify-center items-start py-8 pl-8">
               <h1 className="text-3xl md:text-5xl py-2 text-blue-500 tracking-loose">

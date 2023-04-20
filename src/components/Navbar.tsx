@@ -37,11 +37,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex sticky top-0 z-10 backdrop-blur-md shadow-md bg-white/60 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200">
+    <nav className="flex sticky top-0 z-10 backdrop-blur-md shadow-md bg-white/60 dark:bg-[#2F3855]/80 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200 dark:border-[#19376D]">
       {/* LibreFly´s Logo */}
-      <h1 className="text-2xl px-2 md:text-xl">
+      <h1 className="text-2xl px-2 md:text-xl dark:text-[#F7F8FB]">
         <Link
-          className="block lg:inline-block lg:mt-0 hover:text-blue-500 mr-4"
+          className="block lg:inline-block lg:mt-0 hover:text-blue-500 dark:hover:text-[#576CBC] mr-4"
           to="/"
         >
           Libre<span className="font-bold">Fly</span>
@@ -63,7 +63,7 @@ const Navbar = () => {
 
       {/* Menu */}
       <div className="hidden md:flex items-center w-auto">
-        <div className="text-sm">
+        <div className="text-sm dark:text-[#FDFFFE]">
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
@@ -77,7 +77,7 @@ const Navbar = () => {
             Books
           </NavLink>
         </div>
-        <div className="text-sm">
+        <div className="text-sm dark:text-[#FDFFFE]">
           <NavLink
             className={({ isActive, isPending }) =>
               isPending
@@ -99,10 +99,10 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
         <Link
-          className="flex items-center gap-1 text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400"
+          className="flex items-center gap-1 text-sm px-4 py-2 rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400 dark:text-white dark:border-white dark:hover:text-white dark:hover:bg-[#8EBBFF]"
           to="/new-book"
         >
-          <HiPlusCircle className="text-blue-600 text-lg" />
+          <HiPlusCircle className="text-blue-600 dark:text-[#FDFFFE]  text-lg" />
           Publish book
         </Link>
       </div>
