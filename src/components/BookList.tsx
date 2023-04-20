@@ -29,7 +29,15 @@ const BookList = () => {
     ) : (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 w-full mx-auto gap-7 lg:gap-5 my-6 mb-12">
         {books
-          .filter((book) => book.name.toLowerCase().includes(searchTerm))
+          .filter(
+            (book) =>
+              book.name.toLowerCase().includes(searchTerm) ||
+              book.author_first_name.toLowerCase().includes(searchTerm) ||
+              book.author_last_name.toLowerCase().includes(searchTerm) ||
+              (book.author_last_name.toLowerCase().includes(searchTerm) &&
+                book.author_last_name.toLowerCase().includes(searchTerm)) ||
+              book.isbn.toLowerCase().includes(searchTerm)
+          )
           .map((book) => {
             return (
               <BookItem book={book} key={book._id} loadBooks={loadBooks} />
