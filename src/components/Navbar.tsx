@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   HiPlus,
@@ -35,6 +35,22 @@ const Navbar = () => {
     dispatch(setSearchTerm(searchText));
     setSearchText("");
   };
+
+  let menuRef = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    let handler = (e: any) => {
+      if (!menuRef.current?.contains(e.target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
 
   return (
     <nav className="flex sticky top-0 z-10 backdrop-blur-md shadow-md bg-white/60 dark:bg-[#2F3855]/80 w-full justify-between items-center max-w-[1640px] h-20 mx-auto p-4 border-b border-gray-200 dark:border-[#19376D]">
@@ -160,6 +176,7 @@ const Navbar = () => {
           {openMenu ? <HiOutlineX size={20} /> : <HiMenu size={20} />}
         </div>
         <div
+          ref={menuRef}
           className={
             openMenu
               ? "fixed pt-28 uppercase bg-blue-500 dark:bg-[#2F3855] left-0 top-0 w-[60%] border-r border-r-gray-900 dark:border-r-[#242b42]/80 h-screen ease-in-out duration-500"
