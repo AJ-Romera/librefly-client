@@ -251,6 +251,7 @@ const BookForm = () => {
                   placeholder="Genre of the book"
                   onChange={handleSelectChange}
                 >
+                  <option>--Select--</option>
                   <option>Action and Adventure</option>
                   <option>Classics</option>
                   <option>Comic Book or Graphic Novel</option>
@@ -294,6 +295,7 @@ const BookForm = () => {
                   placeholder="Binding of the book"
                   onChange={handleSelectChange}
                 >
+                  <option>--Select--</option>
                   <option>Hard Binding</option>
                   <option>Soft Binding</option>
                   <option>Pocket Edition</option>
@@ -358,11 +360,11 @@ const BookForm = () => {
           </div>
 
           {params.id ? (
-            <button className="bg-green-500 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+            <button className="px-6 py-2 font-medium rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400 dark:text-white dark:bg-[#4075c5] dark:hover:bg-transparent dark:hover:border-white dark:border-transparent dark:hover:text-[#8EBBFF]">
               Update
             </button>
           ) : (
-            <button className="bg-green-700 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+            <button className="px-6 py-2 font-medium rounded border border-black hover:border-transparent hover:text-white hover:bg-blue-400 dark:text-white dark:bg-[#4075c5] dark:hover:bg-transparent dark:hover:border-white dark:border-transparent dark:hover:text-[#8EBBFF]">
               Create
             </button>
           )}
