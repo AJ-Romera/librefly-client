@@ -186,7 +186,8 @@ const BookForm = () => {
             <input
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
               id="cover"
-              type="text"
+              type="url"
+              pattern="https?:\/\/?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)(.jpg|.png|.gif|.webp)"
               name="cover"
               value={book.cover}
               placeholder="Cover of the book"
@@ -209,6 +210,7 @@ const BookForm = () => {
             <textarea
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
               id="blurb"
+              maxLength={3000}
               rows={3}
               name="blurb"
               value={book.blurb}
@@ -350,7 +352,7 @@ const BookForm = () => {
               <input
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                 id="release_date"
-                type="text"
+                type="date"
                 name="release_date"
                 value={book.release_date}
                 placeholder="Release Date of the Book"
