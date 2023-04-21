@@ -5,9 +5,9 @@ const HeroSection = () => {
   return (
     <section>
       <div className="bg-hero-1">
-        <div className="bg-gradient-to-r from-white to-blue-500/40 backdrop-blur-sm py-6 mt-6 dark:bg-gradient-to-r dark:from-[#2F3855]/90 dark:to-[#282932]/40">
+        <div className="bg-gradient-to-r from-white to-blue-300/70 backdrop-blur-md md:from-white md:to-blue-500/40 md:backdrop-blur-sm py-6 mt-6 dark:bg-gradient-to-r dark:from-[#2F3855]/90 dark:to-[#282932]/40">
           <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-            <div className="flex flex-col w-full lg:w-1/3 justify-center items-start py-8 pl-8">
+            <div className="flex flex-col w-full lg:w-1/3 justify-center items-start py-8 pl-8 pr-7 md:pr-0">
               <h1 className="text-3xl md:text-5xl py-2 text-blue-500 dark:text-[#8EBBFF] tracking-loose">
                 LibreFly
               </h1>
@@ -15,7 +15,7 @@ const HeroSection = () => {
                 Experience the joy of reading and let your thoughts take flight
                 with LibreFly
               </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-[#c8d5ff] mb-4">
+              <p className="text-sm md:text-base text-slate-700 dark:text-[#c8d5ff] mb-4">
                 Feed your mind and nourish your soul with our extensive
                 collection of books. Or bring your book to life and connect with
                 readers who will love and cherish your work
