@@ -9,7 +9,7 @@
 ## Table Of Content
 
 - [Features](#features)
-- [Tech I used & why](#tech-i-used-&-why)
+- [Tech I used and Why](#tech-i-used-and-why)
 - [Links](#links)
 - [Screenshots](#screenshots)
     - [Desktop](#desktop)
@@ -27,7 +27,7 @@
 * Full responsive
 * 404 page when you click the "example" route in the menu
 
-## Tech I used & why
+## Tech i Used And Why
 
 * Vite - To jumpstart a single page application easier, faster, lighter, etc, than Create React App
 * MERN - Mongodb atlas, as I use the free tier, it´s easy to use. Express is good NodeJS framework for making APIs. React it´s my favourite JS library, and it´s widely used worldwide. Node completes this famous stack.
