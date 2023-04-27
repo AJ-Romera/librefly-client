@@ -53,6 +53,15 @@
 ## Screenshots
 
 ### Desktop
-TBA
+
+![librefly-desktop-dark](https://user-images.githubusercontent.com/71382951/234944969-10ece4c9-dead-47be-b10d-db452df6ea6f.png)
+![librefly-desktop-light](https://user-images.githubusercontent.com/71382951/234945077-df28616c-49c4-4c4b-b4af-5a0b111db3cd.png)
+![librefly-desktop-light-bookdetails](https://user-images.githubusercontent.com/71382951/234945360-260b7a0a-7020-47ba-9264-84e0ddab9115.png)
+![librefly-desktop-light-publishbookform](https://user-images.githubusercontent.com/71382951/234945416-87d993de-3504-4d6b-b6f3-46fb8a000a1b.png)
+![librefly-desktop-light-404](https://user-images.githubusercontent.com/71382951/234945626-e00fe377-cca6-4ada-bf35-e0075db78007.png)
+
 ### Mobile
-TBA
+
+![librefly-mobile-light](https://user-images.githubusercontent.com/71382951/234945869-6b870e84-ce18-44c1-8b42-99ef8519d0d3.png)
+![librefly-mobile-light-bookdetails](https://user-images.githubusercontent.com/71382951/234945952-86f2f8cd-8031-432b-9820-ba4103fd804e.png)
+![librefly-mobile-dark](https://user-images.githubusercontent.com/71382951/234945997-ad304de1-e8be-4a15-b276-0cb512d2ca60.png)
